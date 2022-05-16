@@ -7,9 +7,10 @@ const Search = (props)=> {
 
         <section>
             <form onSubmit={props.handleSubmit}>
-                <span>Search</span>
+               <h2> <span>Search </span>
                 <input onChange={ props.handleSearch} name ="searchbar" type="text" value={props.query} ></input>
                 <button>Search</button>
+                </h2>
             </form>
         </section>
     )

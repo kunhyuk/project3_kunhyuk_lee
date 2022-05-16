@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
-import Food from "../pages/Food";
+import {  useState } from "react";
+//import { useEffect } from "react";
+//import { Route, Routes } from "react-router-dom";
+//import Food from "../pages/Food";
 import Search from "../components/Search"
 import Results from "../pages/Results";
 import Next from "./Next";
@@ -28,7 +29,6 @@ function Main(props) {
         const data = await response.json()
         setResults(data.hits)
         setNext(data._links)
-        console.log(next['next'])
       } catch(err) {
         console.log(err)
       }
@@ -52,7 +52,7 @@ function Main(props) {
       <>
         <Search query={query} handleSearch={handleSearch} handleSubmit={handleSubmit} />
         <Results results = {results}/>
-        <Next next = {next} nextButton={nextButton} />
+        <Next nextButton={nextButton} />
       </>
     )
 }
