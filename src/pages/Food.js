@@ -24,18 +24,18 @@ function Food(props) {// state to hold formData
 
 
     
-    // const loaded = () => {
-    //     return props.item.map((item) => (
-    //             <div key={item._id} className='item'>
-    //                 <Link to={`/${item._id}`}>
-    //                     <h1>{item.name}</h1>
-    //                     <img src={item.image} alt={item.name} />
-    //                     <h3>$ {item.price}</h3>
-    //                 </Link>
-    //             </div>
-    //         )
-    //     )
-    // }
+    const loaded = () => {
+        return props.food.map((food) => (
+                <div key={food._id} className='food'>
+                    
+                        <h1>{food.label}</h1>
+                        <img src={food.image} alt={food.name} />
+                        <h3>$ {food.price}</h3>
+                    
+                </div>
+            )
+        )
+    }
 
     const loading = () => {
         return <h1>Loading.........</h1>
