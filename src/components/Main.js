@@ -3,12 +3,15 @@ import { Route, Routes } from "react-router-dom";
 import Food from "../pages/Food";
 import Search from "../components/Search"
 import Results from "../pages/Results";
+import Next from "./Next";
 //import Show from "../pages/Show";
 
 
 function Main(props) {
     const [query, setQuery] = useState([]);
     const [results, setResults] = useState([])
+    const [next, setNext] = useState([])
+
     function handleSearch(e) {
 
       setQuery(e.target.value);
@@ -24,15 +27,32 @@ function Main(props) {
         const response = await fetch(URL)
         const data = await response.json()
         setResults(data.hits)
+        setNext(data._links)
+        console.log(next['next'])
       } catch(err) {
         console.log(err)
       }
     }
+
+    async function nextButton(e) {
+        try {
+            e.preventDefault();
+            const URL = next.next.href
+            const response = await fetch(URL)
+            const data = await response.json()
+            setResults(data.hits)
+            setNext(data._links)
+        } catch(err) {
+            console.log(err)
+        }
+    }
   
     return (
+    
       <>
         <Search query={query} handleSearch={handleSearch} handleSubmit={handleSubmit} />
         <Results results = {results}/>
+        <Next next = {next} nextButton={nextButton} />
       </>
     )
 }
