@@ -6,7 +6,7 @@ function Header(props) {
         <div className="head">
         <nav className="nav">
             <Link to="/">
-                <div>Food App</div>
+                <div>Home</div>
             </Link>
         </nav>
         <h1>Recipe and Nutrition App</h1>
