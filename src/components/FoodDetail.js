@@ -23,12 +23,17 @@ function FoodDetail(props) {
   const hideIngredient = () => {
     setIsIngredientOpen(false)
   }
+  
 
-  // const ingredientMapping = (props) => {
-  //   return (
+  const showIngredients = props.ingredients.map((ingredient, idx) => {
+      return (
+            <div key = {idx}>
+              {ingredient.text}
+            </div>
+        )
+    })
 
-  //   )
-  // }
+  
 
   return (
     <div>
@@ -39,9 +44,15 @@ function FoodDetail(props) {
         </Modal.Header>
        
           <Modal.Body>
-              {props.ingredients.text}
+              {showIngredients}
 
           </Modal.Body>
+
+          <Modal.Footer>
+          <button onClick={hideIngredient}>Cancel</button>
+          {/* latermake savebutton here  */}
+          {/* <button>Save</button> */}
+        </Modal.Footer>
 
       </Modal>
     <button onClick={showModal}>Nutrition</button>
@@ -50,6 +61,7 @@ function FoodDetail(props) {
           <Modal.Title>Nutrition</Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          {/* I can use map here but there is too many useless info in my opinion */}
           {props.food.ENERC_KCAL.label}: {props.food.ENERC_KCAL.quantity} {props.food.ENERC_KCAL.unit}
           <br/>
           {props.food.FAT.label}: {props.food.FAT.quantity} {props.food.FAT.unit}
