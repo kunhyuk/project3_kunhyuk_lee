@@ -9,7 +9,7 @@ const Results = (props) => {
 
     const showData = props.results.map((food, idx) => {
         return (
-            <Container class="container">
+            <Container className="container" key={idx}>
                 <hr/>
                 <Row>
                     <Col>
