@@ -1,5 +1,22 @@
 .App {
   text-align: center;
+ 
+}
+
+.container {
+  background-color: rgb(205, 246, 154);
+}
+
+.background {
+  background-color: darkkhaki;
+}
+
+.head {
+  background-color: black;
+  color: whitesmoke;
+  font: 1em sans-serif;
+  font-weight: bold;
+
 }
 
 .App-logo {
@@ -36,3 +53,4 @@
     transform: rotate(360deg);
   }
 }
+

@@ -1,5 +1,6 @@
 import React from "react"
-
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Next = (props)=> {
 
@@ -7,7 +8,7 @@ const Next = (props)=> {
         
         return (
                 
-                <button type="submit">Next</button>
+                <Button varinat='outline-secondary' type="submit">Next</Button>
                 
         )
     }

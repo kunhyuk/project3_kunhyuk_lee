@@ -5,6 +5,11 @@ import {  useState } from "react";
 import Search from "../components/Search"
 import Results from "../pages/Results";
 import Next from "./Next";
+import "../App.css"
+
+
+
+
 //import Show from "../pages/Show";
 
 
@@ -51,12 +56,12 @@ function Main(props) {
       //cant use route or is there any way I can use it.
     return (
     
-      <>
+      <div className="background">
         <Search query={query} handleSearch={handleSearch} handleSubmit={handleSubmit} />
         
         <Results results = {results}/>
         <Next nextButton={nextButton} />
-      </>
+      </div>
     )
 }
 

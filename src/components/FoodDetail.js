@@ -1,7 +1,9 @@
 import React from "react";
 
 import Modal from "react-bootstrap/Modal";
-import "bootstrap/dist/css/bootstrap.min.css";
+import Button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css';
+//import "bootstrap/dist/css/bootstrap.min.css";
 
 
 function FoodDetail(props) {
@@ -37,7 +39,7 @@ function FoodDetail(props) {
 
   return (
     <div>
-      <button onClick={showIngredient}> Ingredient </button>
+      <Button size='sm' variant='outline-secondary' onClick={showIngredient}> Ingredient </Button>
       <Modal show = {isIngredientOpen} onHide={hideIngredient}>
       <Modal.Header>
           <Modal.Title>Ingredient</Modal.Title>
@@ -49,16 +51,16 @@ function FoodDetail(props) {
           </Modal.Body>
 
           <Modal.Footer>
-          <button onClick={hideIngredient}>Cancel</button>
+          <Button variant='outline-secondary' onClick={hideIngredient}>Cancel</Button>
           {/* latermake savebutton here  */}
           {/* <button>Save</button> */}
         </Modal.Footer>
 
       </Modal>
-    <button onClick={showModal}>Nutrition</button>
+    <Button size='sm' variant='outline-secondary' onClick={showModal}>Nutrition</Button>
       <Modal show={isOpen} onHide={hideModal}>
         <Modal.Header>
-          <Modal.Title>Nutrition</Modal.Title>
+          <Modal.Title> Nutrition </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {/* I can use map here but there is too many useless info in my opinion */}
@@ -89,12 +91,12 @@ function FoodDetail(props) {
           </Modal.Body>
 
         <Modal.Footer>
-          <button onClick={hideModal}>Cancel</button>
+          <Button variant='outline-secondary'  onClick={hideModal}> Cancel </Button>
           {/* latermake savebutton here  */}
           {/* <button>Save</button> */}
         </Modal.Footer>
       </Modal>
-      <button onClick={()=> window.open(props.external, "_blank")}>To external website to get detail</button>
+      <Button variant='outline-secondary' size='sm' onClick={()=> window.open(props.external, "_blank")}> External Website </Button>
       </div>
   );
 }
