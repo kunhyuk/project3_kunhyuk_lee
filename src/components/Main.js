@@ -46,11 +46,12 @@ function Main(props) {
             console.log(err)
         }
     }
-  
+      //cant use route or is there any way I can use it.
     return (
     
       <>
         <Search query={query} handleSearch={handleSearch} handleSubmit={handleSubmit} />
+        
         <Results results = {results}/>
         <Next nextButton={nextButton} />
       </>

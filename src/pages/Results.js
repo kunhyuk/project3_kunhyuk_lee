@@ -1,4 +1,5 @@
 import React from "react";
+import FoodDetail from "../components/FoodDetail";
 
 
 const Results = (props) => {
@@ -16,8 +17,9 @@ const Results = (props) => {
 
                 {food.recipe.ingredientLines}
                 <br></br>
+                <FoodDetail food ={food.recipe.totalNutrients} external = {food.recipe.url} ingredients = {food.recipe.ingredients}/>
             </span>
-
+            
             </div>
         )
     })
@@ -26,7 +28,7 @@ const Results = (props) => {
     return (
         <div>
             {showData}
-            <hr/>
+            
         </div>
     )
 }
